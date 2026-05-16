@@ -1,0 +1,232 @@
+/* Checkout Page Styles */
+.checkout-section {
+    padding: 40px 0;
+    min-height: 70vh;
+}
+
+.checkout-section h1 {
+    margin-bottom: 30px;
+}
+
+.checkout-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .checkout-content {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-form {
+        padding: 20px 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .summary-item {
+        gap: 10px;
+    }
+
+    .summary-item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .summary-item-name {
+        font-size: 13px;
+    }
+}
+
+.checkout-form {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.form-section input.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-section input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 114, 42, 0.1);
+}
+
+.card-number {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.checkout-summary {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.checkout-summary h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.summary-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--light-bg);
+}
+
+.summary-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.summary-item-info {
+    flex: 1;
+}
+
+.summary-item-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.summary-item-qty {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.summary-item-price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.summary-totals {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.summary-row.total {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Success State */
+.success-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: var(--success-color);
+    margin-bottom: 20px;
+    animation: scaleUp 0.5s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.success-message h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.success-message p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.order-number {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 18px;
+    color: var(--primary-color);
+}

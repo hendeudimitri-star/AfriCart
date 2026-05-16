@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriCart - Index du Projet</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6B3A2A 0%, #E8722A 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #E8722A;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subtitle {
+            color: #8B5E3C;
+            margin-bottom: 30px;
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .section {
+            background: #FDF6EC;
+            border: 2px solid #EDE0D4;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            border-color: #E8722A;
+            box-shadow: 0 4px 12px rgba(232, 114, 42, 0.1);
+        }
+        
+        .section h2 {
+            color: #E8722A;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section ul {
+            list-style: none;
+        }
+        
+        .section li {
+            padding: 8px 0;
+            color: #8B5E3C;
+        }
+
+        .section a {
+            color: #E8722A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .section a:hover {
+            color: #D4631F;
+            text-decoration: underline;
+        }
+        
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #E8722A 0%, #D4631F 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(232, 114, 42, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #EDE0D4;
+            color: #E8722A;
+        }
+        
+        .btn-secondary:hover {
+            background: #DFC8B0;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #6B3A2A 0%, #E8722A 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            padding: 15px;
+            background: #FFF0DC;
+            border-left: 4px solid #E8722A;
+            border-radius: 4px;
+        }
+        
+        .feature-title {
+            color: #E8722A;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .feature-desc {
+            font-size: 12px;
+            color: #8B5E3C;
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #EDE0D4;
+            text-align: center;
+            color: #8B5E3C;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ AfriCart - E-Commerce Site</h1>
+        <p class="subtitle">Un site e-commerce moderne et complet - Créé le 15 mai 2026</p>
+        
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Pages HTML</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">20</div>
+                <div class="stat-label">Produits</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Fichiers CSS</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">8</div>
+                <div class="stat-label">Scripts JS</div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="actions">
+            <a href="index.html" class="btn btn-primary">🚀 Aller au Site</a>
+            <a href="QUICK-START.md" class="btn btn-secondary">⚡ Démarrage Rapide</a>
+            <a href="README.md" class="btn btn-secondary">📖 Documentation</a>
+            <a href="COMPLETION-REPORT.md" class="btn btn-secondary">✅ Rapport Final</a>
+        </div>
+        
+        <!-- Sections -->
+        <div class="sections">
+            <!-- Pages -->
+            <div class="section">
+                <h2>📄 Pages du Site</h2>
+                <ul>
+                    <li><a href="index.html">🏠 Accueil</a></li>
+                    <li><a href="pages/cart.html">🛒 Panier</a></li>
+                    <li><a href="pages/wishlist.html">❤️ Favoris</a></li>
+                    <li><a href="pages/checkout.html">💳 Paiement</a></li>
+                    <li><a href="pages/account.html">👤 Compte</a></li>
+                    <li><a href="pages/login.html">🔐 Connexion</a></li>
+                    <li><a href="pages/signup.html">✍️ Inscription</a></li>
+                    <li><a href="pages/contact.html">📞 Contact</a></li>
+                    <li><a href="pages/about.html">ℹ️ À propos</a></li>
+                    <li><a href="pages/404.html">⚠️ Erreur 404</a></li>
+                </ul>
+            </div>
+            
+            <!-- Documentation -->
+            <div class="section">
+                <h2>📚 Documentation</h2>
+                <ul>
+                    <li><a href="README.md">📖 README - Vue d'ensemble</a></li>
+                    <li><a href="QUICK-START.md">⚡ Guide Démarrage</a></li>
+                    <li><a href="DEVELOPMENT.md">🔧 Guide Développeur</a></li>
+                    <li><a href="TESTING.md">✅ Tests & Validation</a></li>
+                    <li><a href="ROADMAP.md">🗺️ Futures Améliorations</a></li>
+                    <li><a href="COMPLETION-REPORT.md">✅ Rapport Complétion</a></li>
+                </ul>
+            </div>
+            
+            <!-- Fichiers -->
+            <div class="section">
+                <h2>📁 Fichiers du Projet</h2>
+                <ul>
+                    <li><strong>HTML:</strong> 10 fichiers</li>
+                    <li><strong>CSS:</strong> 5 fichiers (~1800 lignes)</li>
+                    <li><strong>JavaScript:</strong> 8 fichiers (~1500 lignes)</li>
+                    <li><strong>Images:</strong> 15 fichiers mockup</li>
+                    <li><strong>Config:</strong> 5 fichiers</li>
+                    <li><strong>Total:</strong> 34 fichiers</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <h2 style="margin-top: 40px; color: #E8722A;">✨ Fonctionnalités</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">🛒 E-Commerce</div>
+                <div class="feature-desc">Panier, favoris, paiement simulé</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">👤 Authentification</div>
+                <div class="feature-desc">Login, signup, profil utilisateur</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">📱 Responsive</div>
+                <div class="feature-desc">Mobile, tablette, desktop optimisé</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">🔍 Recherche</div>
+                <div class="feature-desc">Filtrage et tri des produits</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">💾 localStorage</div>
+                <div class="feature-desc">Sauvegarde panier et favoris</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">🎨 Design Moderne</div>
+                <div class="feature-desc">UI/UX professionnel et moderne</div>
+            </div>
+        </div>
+        
+        <!-- Test Area -->
+        <h2 style="margin-top: 40px; color: #E8722A;">🧪 Tests Rapides</h2>
+        <div style="background: #FDF6EC; padding: 20px; border-radius: 8px; margin-top: 15px;">
+            <p style="margin-bottom: 15px;"><strong>Ouvrez la console (F12) et essayez:</strong></p>
+            <pre style="background: #1e293b; color: #10b981; padding: 15px; border-radius: 6px; overflow-x: auto;">
+// Voir les produits
+console.log(products.length);
+
+// Ajouter au panier
+addToCart(1, 2);
+
+// Voir le panier
+console.log(cart);
+
+// Rechercher
+console.log(searchProducts('casque'));
+            </pre>
+        </div>
+        
+        <!-- Getting Started -->
+        <h2 style="margin-top: 40px; color: #E8722A;">🚀 Commencer</h2>
+        <div style="background: #FFF0DC; border-left: 4px solid #E8722A; padding: 20px; border-radius: 8px; margin-top: 15px;">
+            <p style="margin-bottom: 15px;"><strong>Option 1: Ouvrir directement</strong></p>
+            <pre style="background: #1e293b; color: #10b981; padding: 10px; border-radius: 6px; margin-bottom: 15px;">
+Double-cliquez sur index.html
+            </pre>
+            <p style="margin-bottom: 15px;"><strong>Option 2: Serveur local</strong></p>
+            <pre style="background: #1e293b; color: #10b981; padding: 10px; border-radius: 6px; margin-bottom: 15px;">
+python -m http.server 8000
+# ou
+npx http-server
+            </pre>
+            <p><strong>Option 3: Déployer</strong></p>
+            <p style="color: #8B5E3C; font-size: 12px;">Netlify, Vercel, GitHub Pages, Firebase, ou serveur personnel</p>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>AfriCart © 2026 | Version 1.0 | Tous droits réservés</p>
+            <p style="margin-top: 10px;">Créé avec ❤️ en HTML5, CSS3 et JavaScript Vanilla</p>
+            <p style="margin-top: 10px;">📧 support@africart.cm | 📞 +237 6 00 00 00 00</p>
+        </footer>
+    </div>
+</body>
+</html>

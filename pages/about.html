@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - AfriCart</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #6B3A2A 0%, #E8722A 50%, #D4631F 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.pexels.com/photos/31661556/pexels-photo-31661556.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        .about-hero .container { position: relative; z-index: 1; }
+        .about-hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .about-hero p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .about-section { padding: 60px 0; }
+        .about-content { background-color: var(--white); padding: 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: var(--shadow); }
+        .about-content h2 { font-size: 24px; margin-bottom: 20px; color: var(--primary-color); }
+        .about-content p { color: var(--text-light); line-height: 1.8; margin-bottom: 15px; }
+        .about-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+        @media (max-width: 768px) { .about-values { grid-template-columns: 1fr; } }
+        .value-card { text-align: center; padding: 40px 30px; background: var(--white); border-radius: 16px; box-shadow: var(--shadow); transition: transform 0.3s ease; }
+        .value-card:hover { transform: translateY(-5px); }
+        .value-icon { font-size: 48px; margin-bottom: 20px; }
+        .value-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .value-card p { color: var(--text-light); font-size: 14px; line-height: 1.6; }
+        .commitment-list { list-style: none; padding: 0; }
+        .commitment-list li { padding: 16px 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 15px; font-size: 15px; }
+        .commitment-list li:last-child { border-bottom: none; }
+        .commitment-list i { color: var(--success-color); font-size: 18px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <span><i class="fas fa-phone"></i> +237 6 99 88 77 66</span>
+                    <span><i class="fas fa-envelope"></i> support@africart.cm</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="logo">
+                        <a href="../index.html"><h1><i class="fas fa-shopping-bag"></i> AfriCart</h1></a>
+                    </div>
+
+                    <div class="main-nav">
+                        <a href="../index.html">Accueil</a>
+                        <a href="boutique.html">Boutique</a>
+                        <a href="about.html" class="active">A propos</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                    <div class="nav-icons">
+                        <div class="account-wrapper">
+                            <a href="account.html" class="nav-icon" title="Mon compte" id="accountTrigger">
+                                <i class="fas fa-user"></i>
+                                <span class="nav-label">Compte</span>
+                            </a>
+                            <div class="account-dropdown" id="accountDropdown">
+                                <div class="account-dropdown-header">
+                                    <div class="user-name" id="dropdownUserName">Invité</div>
+                                    <div class="user-email" id="dropdownUserEmail">Connectez-vous</div>
+                                </div>
+                                <a href="account.html"><i class="fas fa-user"></i> Mon Profil</a>
+                                <a href="account.html"><i class="fas fa-history"></i> Mes Commandes</a>
+                                <a href="wishlist.html"><i class="fas fa-heart"></i> Mes Favoris</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="login-btn" id="dropdownLoginBtn"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                                <a href="#" class="logout-btn" id="dropdownLogoutBtn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                            </div>
+                        </div>
+                        <a href="wishlist.html" class="nav-icon" title="Favoris">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="cart.html" class="nav-icon cart-icon" title="Panier">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <button class="hamburger" id="menuToggle" aria-label="Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-user-section" id="mobileUserSection">
+            <div class="mobile-user-name" id="mobileUserName">Bonjour, Invité</div>
+            <a href="login.html" class="mobile-login-btn" id="mobileLoginBtn"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+        </div>
+        <div class="mobile-nav-header">Navigation</div>
+        <a href="../index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="about.html" class="active">A propos</a>
+        <a href="contact.html">Contact</a>
+        <div class="mobile-nav-header">Mon compte</div>
+        <a href="account.html"><i class="fas fa-user"></i> Mon Profil</a>
+        <a href="wishlist.html"><i class="fas fa-heart"></i> Mes Favoris</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Mon Panier</a>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1><i class="fas fa-shopping-bag"></i> À Propos d'AfriCart</h1>
+            <p>Votre marketplace camerounaise de confiance pour des achats simples, rapides et sécurisés.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2><i class="fas fa-book-open"></i> Notre Histoire</h2>
+                <p>
+                    AfriCart est née de la passion pour le commerce électronique au Cameroun. Depuis 2024, nous nous 
+                    engageons à offrir les meilleurs produits et services à nos clients à Douala, Yaoundé et partout au Cameroun.
+                </p>
+                <p>
+                    Notre mission est simple : rendre le shopping en ligne accessible, sûr et agréable pour tous. 
+                    Nous sélectionnons rigoureusement chaque produit pour garantir la qualité et la satisfaction 
+                    de nos clients, avec des prix en FCFA et des paiements Mobile Money.
+                </p>
+            </div>
+
+            <div class="about-values">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-star" style="color: var(--primary-color);"></i></div>
+                    <h3>Qualité</h3>
+                    <p>Tous nos produits sont sélectionnés avec soin pour garantir votre satisfaction</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt" style="color: var(--success-color);"></i></div>
+                    <h3>Sécurité</h3>
+                    <p>Vos données et transactions sont protégées par les meilleurs systèmes de sécurité</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart" style="color: var(--danger-color);"></i></div>
+                    <h3>Service</h3>
+                    <p>Notre équipe est disponible 24/7 pour vous aider et répondre à vos questions</p>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h2><i class="fas fa-check-circle"></i> Nos Engagements</h2>
+                <ul class="commitment-list">
+                    <li><i class="fas fa-check"></i> Livraison gratuite à partir de 30 000 FCFA à Douala et Yaoundé</li>
+                    <li><i class="fas fa-check"></i> Retours gratuits sous 30 jours</li>
+                    <li><i class="fas fa-check"></i> Prix garantis les plus compétitifs du marché</li>
+                    <li><i class="fas fa-check"></i> Paiement sécurisé par MTN MoMo et Orange Money</li>
+                    <li><i class="fas fa-check"></i> Support client 7j/7 par téléphone et email</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-accent"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo"><i class="fas fa-shopping-bag"></i> AfriCart</div>
+                    <p class="footer-desc">Votre destination e-commerce de confiance au Cameroun. Paiements sécurisés, livraison rapide partout.</p>
+                    <div class="footer-newsletter">
+                        <h4>Restez informé</h4>
+                        <form class="footer-newsletter-form">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens</h3>
+                    <ul>
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="boutique.html"><i class="fas fa-chevron-right"></i> Boutique</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Livraison</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Retours</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Garantie</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +237 6 00 00 00 00</li>
+                        <li><i class="fas fa-envelope"></i> support@africart.cm</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Douala, Cameroun</li>
+                    </ul>
+                    <div class="footer-payment">
+                        <span class="payment-badge"><i class="fas fa-mobile-alt"></i> MTN MoMo</span>
+                        <span class="payment-badge"><i class="fas fa-mobile-alt"></i> Orange Money</span>
+                        <span class="payment-badge"><i class="fas fa-credit-card"></i> Carte</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AfriCart. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Conditions</a>
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop" aria-label="Retour en haut"></a>
+    </footer>
+
+    <script src="../js/header.js"></script>
+</body>
+</html>

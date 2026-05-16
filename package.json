@@ -1,0 +1,42 @@
+﻿{
+  "name": "shophub-ecommerce",
+  "version": "1.0.0",
+  "description": "Un site e-commerce moderne et complet avec panier, favoris et paiement",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server",
+    "test": "npm run test:console",
+    "test:console": "echo 'Open browser console and run tests from TESTING.md'",
+    "build": "echo 'No build required - vanilla HTML/CSS/JS'",
+    "lint": "npx eslint js/ --max-warnings=0",
+    "format": "npx prettier --write ."
+  },
+  "keywords": [
+    "ecommerce",
+    "shopping",
+    "store",
+    "javascript",
+    "html",
+    "css",
+    "responsive"
+  ],
+  "author": "ShopHub Dev Team",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "http-server": "^14.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/shophub"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/shophub/issues"
+  },
+  "homepage": "https://shophub.fr",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
